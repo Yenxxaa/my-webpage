@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桌面分割佈局示例</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar main right"
+                "footer footer footer";
+            grid-template-columns: 1fr 3fr 1fr; /* 調整每個欄的寬度比例 */
+            grid-template-rows: 60px 1fr 40px;  /* 調整每個列的高度比例 */
+            height: 100vh; /* 整頁高度 */
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .right-sidebar {
+            grid-area: right;
+            background-color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            頁面標題
+        </div>
+        <div class="sidebar">
+            左側選單
+            <ul>
+                <li>選單 1</li>
+                <li>選單 2</li>
+                <li>選單 3</li>
+            </ul>
+        </div>
+        <div class="main">
+            主要內容區域
+            <p>這裡可以放置主要的頁面內容。</p>
+        </div>
+        <div class="right-sidebar">
+            右側資訊欄
+            <p>這裡可以顯示其他附加資訊或廣告。</p>
+        </div>
+        <div class="footer">
+            底部資訊
+        </div>
+    </div>
+</body>
+</html>
